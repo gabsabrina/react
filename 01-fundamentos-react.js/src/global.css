@@ -1,0 +1,32 @@
+:root{ /*cores dentro de var para ser reutilizada*/
+    /*os numeros representao a tomalidade(maior mais escuro*/
+    --white: #ffff;
+    --gray-100: #e1e1e6;
+    --gray-300: #c4c4cc;
+    --gray-400: #8d8d99;
+    --gray-600: #323238;
+    --gray-700:#29292e;
+    --gray-800: #202024;
+    --gray-900:#121214;
+
+    --green-500:#00875f;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* faz com que o border,padding etc nao aumentem,mas espremao os elementos para dentro */
+}
+body{
+    background: var(--gray-900);
+    color: var(--gray-300); 
+    -webkit-font-soothing: antialiased; /*aplica nos navegadores webkit um padrao de fonte mais fino principalmente para fontes externas*/
+}
+
+body,input,textarea,button{ /*por padrao input,textarea,button nao herdam a font do body, por isso precisam ser colocados aqui */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /*REM unidade relativa, MAIS PREFERIVEL -> 1rem = 16px no padrao*/ 
+}

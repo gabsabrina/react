@@ -4,7 +4,7 @@ export function Post(propriedades){
     //return<p>Post</p>
     return (
     <div>
-    <strong>{propriedades.author}</strong> {/*para exibir o valor de uma variavel dentro de um html é necessario {} */} 
+    <strong>{propriedades.author}</strong> {/*para exibir o valor de uma variavel javascript dentro de um html é necessario {} */} 
     <p>{propriedades.content}</p>
     </div>
     ) 

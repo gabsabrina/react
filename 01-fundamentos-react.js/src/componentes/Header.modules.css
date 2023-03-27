@@ -1,0 +1,9 @@
+/*para o CSS  nao interfira em outros elementos, apenas no HEADER, utilizar MODULE.CSS*/
+/*MODULE CSS -> procura-se utilizar CLASSES*/
+
+
+.header{
+    background: rgb(96, 96, 96);
+    height: 80px;
+    display: flex;
+}
