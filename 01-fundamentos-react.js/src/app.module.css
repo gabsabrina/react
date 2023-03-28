@@ -1,0 +1,11 @@
+.wrapper{
+    max-width: 70%;
+    margin: 2% auto;
+    padding: 0 1%; /*garante que se o conteudo for diminudo ainda ficara com 1ren de distancia*/
+
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    gap: 2%;
+    align-items: flex-start; /*mantem o conteudo alinhado com o topo*/
+
+} 

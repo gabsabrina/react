@@ -3,7 +3,12 @@
 
 
 .header{
-    background: rgb(96, 96, 96);
-    height: 80px;
+    background: var(--gray-800);
+    height: 60px;
     display: flex;
+    justify-content: center;
+    padding: 1.25rem 0;
+}
+.header img{
+    width: 2ren;
 }

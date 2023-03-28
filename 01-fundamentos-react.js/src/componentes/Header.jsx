@@ -4,12 +4,15 @@
 // em react nao se usar class e sim CLASS NAME(para nap ter confusao com o class do proprio javaascript)
 // com MODULE é preciso nomear o estilo
 
+import './Header.modules.css';
+import imagemLogo from'../image/ignite-simbol.svg';
 
-import './Header.modules.css'
 
 
 export function Header (){
     return(
-     <strong className= 'header'>Ignate Feed</strong>
+        <header className='header'>
+            <img src={imagemLogo} alt="imagem" />
+        </header>   
     )
 }
