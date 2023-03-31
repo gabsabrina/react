@@ -1,8 +1,10 @@
 import { Header } from './componentes/header'
-import {Post} from './post' // -> para named exports
+import {Post} from './componentes/Post' // -> para named exports
 //import Post from './Post' -> para default exports
+import { Sidebar } from './componentes/Sidebar'
 
 import './global.css'
+
 import styles from'./app.module.css'
 
 // COMPONENTE(no react) -> uma funcao que retorna um HTML
@@ -16,7 +18,7 @@ export function App() {
       <Header />
 
       <div className={styles.wrapper}>
-      <Sidebar/>
+        <Sidebar />
       <main>
         <Post 
           author = 'gabi sabrina' 
