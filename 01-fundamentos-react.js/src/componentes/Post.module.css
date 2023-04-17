@@ -42,16 +42,7 @@
     align-items: center;
     gap: 1rem;
 }
-.author img{
-    box-sizing: initial; /*faz com que o border,padding etc que for 
-    add ocupe um espaco A MAIS e nao exprema o conteudo */
-    width: 3rem;
-    height: 3rem;
-    border-radius: 8px;
-    border: 4px solid var(--gray-800);
-    outline: 2px solid var(--green-500);
 
-}
 .authorInfo strong{
     display: block;
     color: var(--gray-100);
@@ -116,4 +107,8 @@
 }
 .commentForm > button:hover{
     background: var(--green-300);
+}
+
+.commentList{
+    margin-top: 2rem;
 }

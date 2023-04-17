@@ -12,7 +12,7 @@ import imagemLogo from'../image/ignite-simbol.svg';
 export function Header (){
     return(
         <header className='header'>
-            <img src={imagemLogo} alt="imagem" />
+            <img src={imagemLogo} alt="imagem"/>
         </header>   
     )
 }

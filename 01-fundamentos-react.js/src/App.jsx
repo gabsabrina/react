@@ -10,6 +10,51 @@ import styles from'./app.module.css'
 // COMPONENTE(no react) -> uma funcao que retorna um HTML
 // todos os componentes devem ter extensao JSX -> JavaScript + xml(HTML)
 
+//author: {avatar_URL:'', name:'', role:''}
+//publisheAt: Date
+//content: String
+
+// {' '}  para add um espaco é necessario {} e uma string vazia ' '  
+
+const posts = [
+  {
+    id:1,
+    author:{
+      avatarURL:'https://avatars.githubusercontent.com/u/122915985?v=4',
+      name:'gabrielle sabrina',
+      role:'CTO @Rocketseat',
+    },
+    content: //nao trazer html direto
+    [
+      {type:'paragraph', content: 'Fala galeraa 👋'},
+      {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'paragraph', content:'👉 jane.design/doctorcare '},
+    ],
+    publishedAt: new Date('2023-04-17 15:00:00')
+
+  },
+
+  {
+  id:2,
+  author:{
+    avatarURL: "https://avatars.githubusercontent.com/u/122915985?v=4",
+    name:'victor cardoso',
+    role:'Educador @Rocketseat',
+  },
+  content: //nao trazer html direto
+  [
+    {type:'paragraph', content: 'Fala galeraa 👋'},
+    {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+    {type: 'paragraph', content:'👉 jane.design/doctorcare '},
+  ],
+  publishedAt: new Date('2023-04-10 15:00:00')
+
+}
+]
+
+//posts.forEach - percorre o array mas nao tem retorno
+//posts.map - percorre o array e exibe um retorno
+
 export function App() {
 
   return ( 
@@ -19,12 +64,16 @@ export function App() {
 
       <div className={styles.wrapper}>
         <Sidebar />
-      <main>
-        <Post 
-          author = 'gabi sabrina' 
-          content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione molestias dignissimos cumque? Tempora quae velit consectetur excepturi sapiente quisquam consequuntur iste asperiores! Facilis, nobis veritatis fugit reprehenderit consequatur porro cum?'
-        />
-        <Post author = 'victor ' content = 'mais um post'/>
+      <main> {/*ITERANDO  com MAP -estrutura de repetiçao, percorre o array e para cada posiçao faça...*/}
+        {posts.map(post => {
+          return (
+            <Post
+            author={post.author}
+            content={post.content}
+            publishedAt={post.publishedAt}
+            />
+          )
+        })}
       </main>
     </div>
     </div>

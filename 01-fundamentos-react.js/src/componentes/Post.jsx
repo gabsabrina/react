@@ -1,29 +1,32 @@
+import {format} from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
+import { Avatar } from './Avatar'
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-export function Post(){
+export function Post(author, publishedAt){
+    const publishedDateFormat = format (publishedAt, "03 de março ás 17:05h",{
+        locale: ptBR,
+    })
+
     return(
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar}
-                    src="https://avatars.githubusercontent.com/u/122915985?v=4" />
+                    <Avatar hasborder src={author.avatarURL} />
                     <div className={styles.authorInfo}>
-                        <strong>Gabrielle Sabrina</strong>
-                        <span>web developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span> 
                     </div>
                 </div>
-                <time title='03 de março ás 17:05h'dateTime='2023-03-30 17:05:00'>Publicado há 1h</time>
+                <time title='03 de março ás 17:05h'dateTime='2023-04-16 17:05:00'>
+                    {publishedDateFormat} 
+                </time>
             </header>
                 <div className={styles.content}>
-                    <p>Fala galeraa 👋</p>
-                    <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-                    <p>👉{' '}<a href='#'> jane.design/doctorcare</a> </p>
-                    <p> 
-                        <a href='#'> #novoprojeto </a>{' '} {/* para add um espaco é necessario {} e uma string vazia ' '  */}
-                        <a href="#">#nlw</a>{' '}
-                        <a href="#">#rocketseat </a>
-                    </p>
 
+                </div>
                     <form className={styles.commentForm}>
                         <strong>Deixe seu feedback</strong>
 
@@ -33,7 +36,11 @@ export function Post(){
                             <button type='submit'>Publicar</button>
                         </footer>
                     </form>
-                </div>
+                    <div className={styles.commentList}>
+                        <Comment/>
+                        <Comment/>
+                        <Comment/>
+                    </div>
         </article>
     )
 }

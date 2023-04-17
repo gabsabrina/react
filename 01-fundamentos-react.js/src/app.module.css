@@ -9,3 +9,14 @@
     align-items: flex-start; /*mantem o conteudo alinhado com o topo*/
 
 } 
+
+@media (max-width: 798px){
+
+    html{
+
+        font-size: 87.5%; /* 16 -> 100%, 14*100\16 */
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
