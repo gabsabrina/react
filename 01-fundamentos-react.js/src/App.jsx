@@ -20,7 +20,7 @@ const posts = [
   {
     id:1,
     author:{
-      avatarURL:'https://avatars.githubusercontent.com/u/122915985?v=4',
+      avatarUrl:'https://avatars.githubusercontent.com/u/122915985?v=4',
       name:'gabrielle sabrina',
       role:'CTO @Rocketseat',
     },
@@ -28,28 +28,28 @@ const posts = [
     [
       {type:'paragraph', content: 'Fala galeraa 👋'},
       {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-      {type: 'paragraph', content:'👉 jane.design/doctorcare '},
+      {type: 'link', content:'👉 jane.design/doctorcare '},
     ],
     publishedAt: new Date('2023-04-17 15:00:00')
 
   },
-
   {
-  id:2,
-  author:{
-    avatarURL: "https://avatars.githubusercontent.com/u/122915985?v=4",
-    name:'victor cardoso',
-    role:'Educador @Rocketseat',
-  },
-  content: //nao trazer html direto
-  [
+    id:2,
+    author:{
+      avatarUrl: 'https://avatars.githubusercontent.com/u/122915985?v=4',
+      name:'victor cardoso',
+      role:'Educador @Rocketseat',
+    },
+    content: //nao trazer html direto
+    [
     {type:'paragraph', content: 'Fala galeraa 👋'},
     {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-    {type: 'paragraph', content:'👉 jane.design/doctorcare '},
-  ],
-  publishedAt: new Date('2023-04-10 15:00:00')
+    {type: 'link', content:'👉 jane.design/doctorcare '},
+    ],
+    publishedAt: new Date('2023-04-10 15:00:00')
+  },
 
-}
+
 ]
 
 //posts.forEach - percorre o array mas nao tem retorno
