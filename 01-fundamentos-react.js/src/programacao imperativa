@@ -1,0 +1,15 @@
+# programacao imperativa
+o que deve ser feito (passo-a-passo)
+- receita de bolo
+1. Ligar o forno a 180
+2. Abrir a porta de forno
+3. colocar a massa na forma
+4. colocar a forma dentro do forno
+
+#programacao declarativa
+quais condicoes para eu ter o resultado final
+-receita de bolo
+1. o forno precisa estar a 180
+2. quando estiver quente, colocar a massa para assar
+3. quando estiver pronta. posso retira-la
+  

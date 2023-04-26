@@ -86,12 +86,15 @@
 .commentForm  footer{
     visibility: hidden;
     max-width: 0;
+    display: none;
+    
 
 }
 
 .commentForm:focus-within footer{/*se houver um focus em qualquer elemento dentro do commentForm aplica os estilos*/
     visibility: visible;
     max-width: none;
+    display: flex;
 
 }
 .commentForm > footer button{

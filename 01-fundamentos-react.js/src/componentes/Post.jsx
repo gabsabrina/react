@@ -13,9 +13,10 @@ export function Post({author, publishedAt,content}){
     //como UseState retorna um array pode desestruturar (usar array do outro lado da operaçao)
     //funçao para alterar o valor dessa var e avisar o react quando for alterado
     const [comments, setComments]= useState([ 
-        1,
-        2,
+        'Post muito Bacana, show'
     ])
+
+    const[newCommentText, setNewCommentText] = useState('')
 
     const publishedDateFormat =  format(publishedAt, "d 'de' LLLL 'às' HH:mm 'h'", {
         locale: ptBR
@@ -28,10 +29,26 @@ export function Post({author, publishedAt,content}){
 
     function handleCreatNewComment(){ //funçao disparada com açao do usuario(padrao comecar com handle)
         event.preventDefault() // evita o default do react de redirecionar para outra pag
+        const newCommentText = event.target.comment.value
         
         //passe( os que tinha + novos) um novo valor
         // add comentarios
-        setComments([...comments, comments.length + 1])
+        setComments([...comments, newCommentText])
+    }
+
+    function handleCreatNewComment(){
+        event.preventDefault()
+
+        setComments([...comments, newCommentText])
+        setNewCommentText('')
+    }
+
+    function handleNewCommentChange(){
+        setNewCommentText(event.target.value)
+    }
+
+    function deleteComment(comment){
+        console.log(`Deletar comentário ${comment}`)
     }
 
     return(
@@ -51,16 +68,22 @@ export function Post({author, publishedAt,content}){
                 <div className={styles.content}>
                     {content.map(linha => {
                         if(linha.type === 'paragraph'){
-                            return <p>{linha.content}</p>
+                            //key- sempre no primeiro elemento depois do retorno
+                            return <p key={linha.content}>{linha.content}</p>
                         } else if (linha.type === 'link'){
-                            return <p><a href=''>{linha.content}</a></p>
+                            return <p key={linha.content}><a href=''>{linha.content}</a></p>
                         }
                     })}
                 </div>
                     <form onSubmit={handleCreatNewComment} className={styles.commentForm}>
                         <strong>Deixe seu feedback</strong>
 
-                        <textarea placeholder='Deixe um comentario'></textarea>
+                        <textarea 
+                        name='comment'
+                        placeholder='Deixe um comentario'
+                        value={newCommentText}
+                        onChange={handleNewCommentChange}>
+                        </textarea>
 
                         <footer>
                             <button type='submit'>Publicar</button>
@@ -68,9 +91,26 @@ export function Post({author, publishedAt,content}){
                     </form>
                     <div className={styles.commentList}>
                         {comments.map(comment =>{
-                            return <Comment/>
+                            return (
+                                <Comment
+                                key={comment}
+                                content={comment}
+                                onDeleteComment={deleteComment} // CHAMANDO UMA FUNÇAO COMO PROPRIEDADE
+                                />
+                            )
                         })}
                     </div>
         </article>
     )
 }
+
+
+
+//key- quando um componente é renferizado novamente no Reac
+// sendo os 3 principais momentos
+// 1.quando o estado altera
+// 2.quando a propriedade altera
+// 3.quando o componente pais renderiza novamente
+// pq nao usar o indice do array como key?
+
+
